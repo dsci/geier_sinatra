@@ -1,0 +1,33 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+html {
+  font-size: 100.01%;
+}
+
+body{
+  font: 18px/27px 'TitilliumText22LRegular', Arial, sans-serif;
+}
+
+body h1
+{
+    font: 60px/68px 'TitilliumText22LRegular', Arial, sans-serif;letter-spacing: 0;
+    font-size: 2.5em;
+    line-height: 1;
+    margin: 0.50em 0;
+}
+
+#headline #welcome #welcome_huge, #login #login_headline{
+    font: 60px/68px 'TitilliumText22LRegular', Arial, sans-serif;letter-spacing: 0;
+    font-size: 4em;
+    line-height: 1;
+    margin: 0.50em 15px;
+}

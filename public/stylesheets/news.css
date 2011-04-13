@@ -1,0 +1,10 @@
+.news_entry{
+	
+}
+
+.news_entry .news_title{
+	font-weight:bold;
+	font-size:1.2em;
+	border-bottom:1px solid #cccccc;
+	margin-top:5px;
+}

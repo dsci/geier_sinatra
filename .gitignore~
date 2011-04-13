@@ -1,0 +1,20 @@
+# OSX
+.DS_Store
+
+# IDE specific stuff
+
+.idea
+
+# mail configs
+
+mail.yml
+
+#SQLite databases 
+
+*.db
+
+# Bundler
+
+.bundle
+Gemfile.lock
+

@@ -1,0 +1,269 @@
+@charset "UTF-8";
+@import "fonts.css";
+@import "defaults.css";
+@import "nav.css";
+@import "disqus.css";
+@import "news.css";
+
+body{
+	background-image:url("../images/back.png");
+	background-color: #f7a60f;
+	background-position: center 5px; 
+	background-repeat:no-repeat;
+}
+
+h3{
+    font: 30px/38px 'TitilliumText22LRegular', Arial, sans-serif;letter-spacing: 0;
+    font-size: 0.9em;
+    color: white;
+}
+
+#head #picture_head{
+    background-image: url("../images/skaterhockey/head_2.png");
+    background-repeat: no-repeat;
+    height:234px;
+		width:905px;
+		margin-left:auto;
+    margin-right:auto;
+		margin-top:35px;
+}
+
+#wrapper{
+    width:905px;
+		/*border-left:#eb7d1c 2px solid;
+		border-right:#eb7d1c 2px solid;
+		border-top:#eb7d1c 2px solid;*/
+		margin-left:auto;
+    margin-right:auto;
+		background-color:white;
+		position:relative;
+    /*border-bottom: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;*/
+}
+
+#head{
+}
+
+#spacer{
+	width:905px;
+	height:5px;
+	margin-left:auto;
+  margin-right:auto;
+	background:url("../images/skaterhockey/spacer_thin.png");
+}
+
+#container{
+	width:905px;
+	margin:0 auto;
+	background:white;
+}
+
+
+#content_wrap{
+	overflow: auto;
+	/*background-color: #252A6E;*/
+	background-color: #434144;
+  width:inherit;		
+}
+			
+#main_left {
+ 		float: left;
+ 		width: 655px;
+		background-color:white;
+		padding-left:10px;
+		
+ }
+ 	
+#sidebar_right {
+
+ 		float: right;
+ 		width: 240px;
+ 		color:white;
+ }
+/*#main {
+	float:left;
+	width:600px;
+	padding:10px;
+}
+
+#sidebar {
+	float:right;
+	width:230px;
+	padding:10px;
+	background:#252A6E;
+	color:white;
+}*/
+
+
+
+#footer{
+    height:75px;
+    width:905px;
+    background-color:#28284C;
+    margin-left:auto;
+    margin-right:auto;
+		-moz-border-radius-topright: 10px;
+		border-top-right-radius: 10px;
+		-moz-border-radius-topleft: 10px;
+		border-top-left-radius: 10px;
+		margin-top:30px;
+		margin-bottom:50px;
+		
+}
+
+#footer,#wrapper,#sidebar{
+	-moz-border-radius-bottomright: 10px;
+	border-bottom-right-radius: 10px;
+	
+}
+
+#footer,#wrapper{
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+#footer{
+	-moz-box-shadow: 0px 8px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0px 8px rgba(0,0,0,0.5);
+	box-shadow: 0px 8px rgba(0,0,0,0.5);
+}
+
+#footer #inner{
+	padding-top:10px;
+	font-size:0.6em;
+	color:white;
+	line-height:2em;
+	text-align:justify;
+	width:880px;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+
+#footer #inner a{
+	color:white;
+}
+
+#footer #inner ul{
+	list-style:none;
+	margin-left:40%;
+	padding:0;
+	margin-top:0px;
+}
+
+#footer #inner ul li{
+	float:left;
+	
+}
+
+#footer #inner ul .not_first{
+	padding-left:15px;
+}
+
+.main_image{
+	border:1px solid #cccccc;
+}
+
+#standings_inner{
+	width:90%;
+	margin-left:12px;
+	margin-top:10px;
+}
+
+.standings_small{
+    font-size:0.8em;
+    line-height:1.0em;
+    border:0;
+    background-color:white;
+    padding-top:10px;
+    padding-bottom:10px;
+    width:100%;
+}
+
+.standings_small thead{
+    text-align:left;
+    color:black;
+}
+
+.standings_small thead th, .standings_small td{
+    padding-left:2px;
+}
+
+.standings_even{
+    background-color:#d9d9d9;
+    color:black;
+}
+
+.standings_odd{
+    color:black;
+}
+
+.map{
+	width:580px; 
+	height:300px;
+}
+
+#current_page{
+	width:630px;
+	text-align:justify;
+}
+
+.map, .location_image{
+	border:1px solid #cccccc;
+}
+
+.location_image{
+	margin-top:10px;
+
+}
+
+#sidebar_right #weather h2,#sidebar_right #standings #head{
+	background:url("../images/skaterhockey/features_right.png");
+	height:24px;
+	margin-top:0;
+	font-size:0.9em;
+	color:orange;
+	padding-left:5px;
+}
+
+#sidebar_right #standings #head{
+	
+}
+
+#infobox{
+	margin-top:5px;
+	background-color:#cccccc;
+	padding: 4px 4px 4px 4px;
+	margin-bottom:15px;
+}
+
+.schedule{
+	list-style:none;
+	padding:0;
+	margin:0;
+	border-left:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+	border-top:1px solid #cccccc;
+	margin-bottom:15px;
+}
+
+.schedule li{
+	border-bottom:1px solid #cccccc;
+	padding-left:5px;
+}
+
+.schedule .home{
+	background-color:#dddddd;
+	
+}
+
+#schedule_event{
+	margin-left:78%;
+	padding-top:55px;
+	font-size:0.7em;
+}
+
+#schedule_event img{
+	margin-left:50px;
+}

@@ -1,0 +1,19 @@
+#disqus_thread{
+	width:645px;
+	border-top:1px solid #cccccc;
+	margin-top:15px;
+	font-size:0.8em;
+}
+
+#disqus_thread a, .dsq-brlink{
+	color: #909090;
+	text-decoration:none;
+}
+
+#disques_thread a:visited{
+	text-decoration:none;
+}
+
+#disqus_thread a:hover{
+	text-decoration:underline;
+}

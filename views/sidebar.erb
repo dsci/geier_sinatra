@@ -1,0 +1,13 @@
+<!--<div id="weather">
+	<h2>Wetter</h2>
+  <%#=weather%>
+</div>
+-->
+<div id="standings">
+	<div id="head">BISHL Tabelle</div>
+  <div id="standings_inner">
+			<%=bishl_standings(:season => Time.now.year.to_s, :cs => "LLA", :type => :small,
+                     :css => {:table_class => "standings_small", :even_class => "standings_even",
+                              :odd_class => "standings_odd"}) %>
+   </div>
+</div>

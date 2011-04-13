@@ -1,0 +1,40 @@
+<% if current_page.eql?("/halle")%>
+	<h2>Rollsportplatz Park 5.1</h2>
+	Der Rollsportplatz 5.1 wird zu Trainingszwecken über das Frühjahr und den Sommer genutzt. Die asphaltierte Fläche bietet für die Sportart die Idealmaße 40m x 20m , mit einer befestigten Bande. Sanitäre Anlagen sind leider nicht vorhanden.
+	<img src="/images/skaterhockey/park51.jpg" title="Rollsportplatz Park5.1 Leipzig/Grünau" class="location_image"/>
+	<br />
+	<strong>Die Adresse des Rollsportplatzes:</strong><br />
+
+	Garskestr.1 <br />
+	04205 Leipzig <br />
+	<div id="map_park" class="map"></div>
+
+	<h2>Mehrzweckhalle Taucha</h2>
+	In der Mehrzweckhalle Taucha werden die Punktspiele in der <a href="http://www.bishl.de">BISHL</a> ausgetragen, zudem findet dort das Wochenendtraining und die außersaisonalen Trainingseinheiten von Oktober bis ca. April statt. <br />
+	Die Halle ist mit 45m x 27m etwas größer als der Rollsportplatz, bietet durch den PVC Belag allerdings ideale Bedingungen für ein Inline-Skaterhockeyspiel. Die Tribüne ist vollständig bestuhlt und fasst ca. 200 Zuschauer.
+	<img src="/images/skaterhockey/mzh.jpg" title="Mehrzweckhalle Taucha" class="location_image"/>
+	<br />
+	<strong>Die Adresse der Mehrzweckhalle Taucha</strong><br />
+	Geschwister-Scholl-Str.6<br/>
+	04425 Taucha<br />
+	<div id="map_mzh" class="map"></div>
+	<br />
+<% elsif(current_page.eql?("/spielplan")) %>
+<h2>Spielplan BISHL 2011</h2>
+	<ul class="schedule">
+	<li>16.04.2011 14:00 Uhr Powerkrauts Berlin (Poststadion / A)</li>
+	<li>17.04.2011 11:00 Uhr ECH Turtles (Strausberg / A)</li>
+	<li class="home">30.04.2011 13:00 Uhr Berlin Bravehearts (Leipzig,Taucha / H)</li>
+	<li class="home">08.05.2011 13:00 Uhr Red Devils Berlin II (Leipzig,Taucha / H)</li>
+	<li class="home">14.05.2011 13:00 Uhr Berliner Schlittschuh-Club (Leipzig,Taucha /H)</li>
+	<li>21.05.2011 13:00 Uhr StraTus II (Friedrichsfelde / A)</li>
+	<li class="home">22.05.2011 19:30 Uhr Spreewölfe Berlin II (Leipzig, Taucha / H)</li>
+	<li class="home">28.05.2011 13:00 Uhr Alpha Team Berlin (Leipzig, Taucha / H)</li>
+	<li>11.06.2011 15:00 Uhr Red Devils II (Poststadion / A) - Berlin Pokal</li>
+	<li>18.06.2011 15:00 Uhr EHC Galabau Berlin (Friedrichsfelde / A)</li>
+	<li class="home">26.06.2011 17:00 Uhr Polarstern Postdam (Leipzig, Taucha / H)</li>
+	<li>03.07.2011 11:00 Uhr StraTus I (Friedrichsfelde / A)</li>
+	</ul>
+<%else%>
+	<%=@content%>
+<%end%>
