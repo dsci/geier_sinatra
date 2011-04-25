@@ -15,7 +15,7 @@
 			<ul>
 				<li class="first"><a href="/">Start</a></li>
 				<li><%=link_to "Mannschaft", :mannschaft %></li>
-				<li><%=link_to "Spielplan", :spielplan %></li>
+				<li><%=link_to "Spielplan", "spielplan/#{Time.now.year}" %></li>
 				<li><%=link_to "Anlage / Halle", :halle %></li>
 				<li><a href="http://forum.eishockey-leipzig.de/index.php?showforum=52" >Forum</a></li>
 				<li><%= link_to "Mitmachen?", :mitmachen %></li>

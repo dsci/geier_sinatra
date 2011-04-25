@@ -236,6 +236,7 @@ h3{
 	background-color:#cccccc;
 	padding: 4px 4px 4px 4px;
 	margin-bottom:15px;
+
 }
 
 .schedule{
@@ -259,11 +260,71 @@ h3{
 }
 
 #schedule_event{
-	margin-left:78%;
+	margin-left:75%;
 	padding-top:55px;
 	font-size:0.7em;
 }
 
+#schedule_event ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    margin-top:-20px;
+    margin-left:3px;
+}
+
+#schedule_event ul li{
+    float:left;
+}
+
+#schedule_event #stadium{
+    padding-left:5px;
+}
+
 #schedule_event img{
-	margin-left:50px;
+	margin-left:45px;
+}
+
+#schedule_event #opponent{
+    margin-top:-10px;
+    font-weight:bold;
+    margin-left:20%;
+}
+
+#weather_inner #location{
+    font-size:1.3em;
+}
+
+#weather_inner #condition,#weather_inner #temperature{
+    font-size:0.9em;
+}
+
+#weather_inner{
+    margin-left:40px;
+}
+
+#weather_inner #condition_img{
+    margin-top:5px;
+    margin-left:50px;
+}
+
+#weather_inner #condition{
+    margin-left:35px;
+}
+
+#weather_inner #temperature{
+    margin-left: 25px;
+}
+
+.stadium{
+    font-size:0.8em;
+}
+
+.schedule{
+    width:inherit;
+    border-bottom:1px solid #cccccc;
+}
+
+.schedule .date{
+    padding-left:3px;
 }

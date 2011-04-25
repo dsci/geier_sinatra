@@ -20,7 +20,6 @@
 * #9 Pohle, Julia
 * #16 Worm, Christin
 * #19 Schiebel, Roland
-* #21 Möbius, Tina
 * #33 Königstätter,Ronny
 * #38 Stolzenberger, Dominik
 * #79 Schmidt, Daniel "A"

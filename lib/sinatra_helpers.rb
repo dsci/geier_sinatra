@@ -1,4 +1,4 @@
-helpers do
+ helpers do
 
   def partial(template)
     erb template, :layout => false
@@ -36,4 +36,48 @@ helpers do
   def s(text)
     text.slice(0..200).concat("...")
   end
+
+  def opponent(game)
+    return game.hometeam if game.awayteam_id == "74"
+    return game.awayteam if game.hometeam_id == "74"
+  end
+
+  def home_css(game)
+    game.hometeam_id == "74" ? "home" : ""
+  end
+
+  def result(game)
+    #<%=game.goalshome%> : <%=game.goalsaway%>
+    if game.goalshome.empty? and game.goalsaway.empty?
+      ""
+    else
+      if game.hometeam_id == "74"
+        "#{game.goalshome} : #{game.goalsaway}"
+      else
+        "#{game.goalsaway} : #{game.goalshome}"
+      end
+    end
+  end
+
+  def opponent_id(game)
+    return game.hometeam_id if game.awayteam_id == "74"
+    return game.awayteam_id if game.hometeam_id == "74"
+  end
+
+  def next_game
+    game = BISHL.next_game_for({:season => "2011", :cs => "LLA",  :team => "74"})
+    unless game.empty?
+      <<-HTML
+        <img src='#{BISHL.logo_for(:team => opponent_id(game.first))}' width="115" height="115" />
+        <p id="opponent">#{opponent(game.first)}</p>
+        <ul>
+          <li>#{game.first.date.strftime('%d.%m.%Y')}</li>
+          <li id="stadium">
+             #{game.first.stadium}
+          </li>
+        <ul>
+      HTML
+    end
+  end
+
 end

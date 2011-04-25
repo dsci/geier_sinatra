@@ -22,6 +22,8 @@ end
 
 # include ActiveRecord models, Sinatra helpers, sinatra db config and so on.
 Dir[File.expand_path(File.join(File.dirname(__FILE__),'lib','**','*.rb'))].each {|f| require f}
+
+
 #include textile reader
 include FileHelper
 
@@ -75,11 +77,15 @@ get "/halle" do
   erb :static_page
 end
 
-get "/spielplan" do
-  erb :static_page
+get "/spielplan/:year" do
+  page_title("Spielplan")
+  @year = params[:year]
+  @games = BISHL.schedule({:season => @year,:cs => "LLA", :team => 74})
+  erb :schedule
 end
 
 get "/impressum" do
+  page_title("Impressum")
   @content = read_file(content_file_path("impressum.textile")).to_textile
   erb :static_page
 end
@@ -90,5 +96,5 @@ get "/fetch/data" do
 end
 
 get "/cleanup" do
-  
+  MailOperator::delete_news
 end
