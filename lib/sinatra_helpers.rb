@@ -64,6 +64,18 @@
     return game.awayteam_id if game.hometeam_id == "74"
   end
 
+  def game_time(game)
+    game.date.strftime('%d.%m.%Y %H:%M')
+  end
+
+  def type_of(game)
+    if home_css(game) == "home"
+      return "<strong>(Heim)</strong>"
+    else
+      return "(Auswärts)"
+    end
+  end
+
   def next_game
     game = BISHL.next_game_for({:season => "2011", :cs => "LLA",  :team => "74"})
     unless game.empty?
@@ -71,9 +83,9 @@
         <img src='#{BISHL.logo_for(:team => opponent_id(game.first))}' width="115" height="115" />
         <p id="opponent">#{opponent(game.first)}</p>
         <ul>
-          <li>#{game.first.date.strftime('%d.%m.%Y')}</li>
+          <li>#{game_time(game.first)}</li>
           <li id="stadium">
-             #{game.first.stadium}
+             #{type_of(game.first)}
           </li>
         <ul>
       HTML
