@@ -98,3 +98,16 @@ end
 get "/cleanup" do
   MailOperator::delete_news
 end
+
+get "/flyer" do
+  
+  @flyers = []
+  @base_uri = "/flyer"
+  excludes = [".", "..", ".DS_Store"]
+  Dir.foreach(File.join(File.dirname(__FILE__), "public", "flyer")).each do |flyer|
+    unless excludes.include?(flyer)
+      @flyers << flyer
+    end
+  end
+  erb :flyer, :layout => false
+end
