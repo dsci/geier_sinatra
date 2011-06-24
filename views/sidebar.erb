@@ -4,6 +4,8 @@
 </div>
 
 <div id="standings">
+    <div id="head">Letztes Spiel</div>
+    <%=last_game%>
 	<div id="head">BISHL Tabelle</div>
   <div id="standings_inner">
 			<%=bishl_standings(:season => Time.now.year.to_s, :cs => "LLA", :type => :small,

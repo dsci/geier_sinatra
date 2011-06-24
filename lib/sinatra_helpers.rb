@@ -77,7 +77,7 @@
   end
 
   def next_game
-    game = BISHL.next_game_for({:season => "2011", :cs => "LLA",  :team => "74"})
+    game = BISHL.next_game_for({:season => Time.now.year.to_s, :cs => "LLA",  :team => "74"})
     unless game.empty?
       <<-HTML
         <img src='#{BISHL.logo_for(:team => opponent_id(game.first))}' width="115" height="115" />
@@ -90,6 +90,25 @@
         <ul>
       HTML
     end
+  end
+
+  def last_game
+    game = BISHL.last_game_for({:season => Time.now.year.to_s, :cs => "LLA", :team => "74"})
+    if(game.first.hometeamid.eql?("74"))
+      result_line = "#{game.first.goalshome}:#{game.first.goalsaway}"
+    else
+      result_line = "#{game.first.goalsaway}:#{game.first.goalshome}"
+    end
+    unless game.empty?
+      <<-HTML
+      <div id="last_game">
+        <img src='#{BISHL.logo_for(:team => opponent_id(game.first))}' width="100" height="100" />
+        <p id="last_opponent">vs .#{opponent(game.first)}, #{result_line}</p>
+        <div></div>
+      </div>
+      HTML
+    end
+
   end
 
 end

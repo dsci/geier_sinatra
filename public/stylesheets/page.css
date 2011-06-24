@@ -285,7 +285,7 @@ h3{
 	margin-left:45px;
 }
 
-#schedule_event #opponent{
+#schedule_event #opponent, #last_opponent{
     margin-top:-10px;
     font-weight:bold;
     margin-left:20%;
@@ -327,4 +327,14 @@ h3{
 
 .schedule .date{
     padding-left:3px;
+}
+
+#last_game img{
+    margin-left:25%;
+    margin-top:5%;
+}
+
+#last_opponent{
+    font-size:0.7em;
+    margin-left:25%;
 }
