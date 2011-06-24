@@ -1,0 +1,7 @@
+<%@news.each do |news|%>
+	<div class="news_entry">
+		<div class="news_title"><%=news.title%></div>
+		<div class="news_text"><%=s(textilize(news.text))%></div>
+		<div class="news_more"><a href="/news/<%=news.id%>">mehr</a></div>
+	</div>
+<%end%>

@@ -111,3 +111,8 @@ get "/flyer" do
   end
   erb :flyer, :layout => false
 end
+
+get "/archiv" do
+  @news = News.all-News.tops
+  erb :news_index
+end
