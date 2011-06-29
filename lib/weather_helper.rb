@@ -8,6 +8,7 @@ module WeatherHelper
       when "mostly cloudy" then "Meistens bewölkt"
       when "rainy" then "Regnerisch"
       when "sunny" then "Sonnig"
+      when "cloudy" then "Bewölkt"
     end
   end
 
