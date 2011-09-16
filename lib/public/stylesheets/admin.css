@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@import "fonts.css";
+@import "defaults.css";
+
+body{
+	
+}
+
+#admin-panel{
+	width: 800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#panel-container{
+	border:0;
+}
