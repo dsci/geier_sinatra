@@ -4,6 +4,14 @@ describe "CCut" do
   
   include Rack::Test::Methods
   
+  def create_news
+    attributes = {
+      :title => Faker::Lorem.words,
+      :text => Faker::Lorem.paragraphs
+    }
+    @news = News.create(attributes)
+  end
+
   def app 
     @app ||= CCut::Application
   end
@@ -57,14 +65,26 @@ describe "CCut" do
     
     context "#put" do
       
+      before do
+        create_news
+      end
+
       context "update a news" do
         
         it "succeeds" do
-          pending
+          attributes = {:title => "Updated news!"}
+          put "/news/#{@news.id}", :news => attributes
+          last_response.should be_ok
+          result = Yajl::Parser.parse(last_response.body)
+          result["success"].should be true
+          result["news"].first["news"]["title"].should == attributes[:title]  
         end
         
         it "fails" do
-          pending
+          attributes = {:title => "", :text => "Only text"}
+          put "/news/#{@news.id}", :news => attributes
+          result = Yajl::Parser.parse(last_response.body)
+          result["success"].should be false
         end
         
       end
@@ -73,14 +93,23 @@ describe "CCut" do
     
     context "#delete" do
       
+      before do
+        
+      end
+
       context "delete a news" do
         
         it "succeeds" do
-          pending
+          create_news
+          delete "/news/#{@news.id}"
+          result = Yajl::Parser.parse(last_response.body)
+          result["success"].should be true
         end
         
         it "fails" do
-          pending
+          delete "/news/1234"
+          result = Yajl::Parser.parse(last_response.body)
+          result["success"].should be false
         end
       end
     end

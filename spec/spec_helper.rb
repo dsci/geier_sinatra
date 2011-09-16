@@ -4,6 +4,7 @@ require 'rack/test'
 require 'rspec'
 require 'database_cleaner'
 require 'yajl'
+require "faker"
 
 ENV['RACK_ENV'] = 'test'
 

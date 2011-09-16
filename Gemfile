@@ -25,6 +25,7 @@ group :development do
 end
 
 group :test do
+	gem "faker"
 	gem "shoulda"
 	gem 'fuubar'
 	gem "rack-test"

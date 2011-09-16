@@ -5,7 +5,7 @@ require "rubygems"
 require "bundler/setup"
 
 libs = %w(weather bishl mongoid RedCloth sinatra/base json
-          digest/sha1 rack-flash gmail yaml haml sinatra-authentication)
+          digest/sha1 rack-flash gmail yaml haml slim sinatra-authentication)
 
 libs.each{|library| require library}
 
@@ -41,7 +41,7 @@ module CCut
   
   # The main application. Nothing more and nothing less.
   class Application < Sinatra::Base
-    # put knowledge of SinatraAuthentication into the app
+    # mix knowledge of SinatraAuthentication into the app
     register Sinatra::SinatraAuthentication  
       
     use Rack::Session::Cookie, :secret => "Nearly all men can stand adversity, but if you want to test a man's character give him power."
@@ -67,6 +67,10 @@ module CCut
     
     
     helpers do
+
+      def test_env?
+        return ENV['RACK_ENV'].eql?("test")
+      end
 
       def partial(template)
         erb template, :layout => false
@@ -191,7 +195,7 @@ module CCut
     
     # Adds a news to the database.
     post "/news" do
-      login_required unless ENV["RACK_ENV"].eql?("test")
+      login_required unless test_env?
       content_type :json
       news = News.new(params[:news])
       result = {}
@@ -218,12 +222,32 @@ module CCut
     
     # Deletes a news given by an id from the database.
     delete "/news/:id" do
-      login_required
+      result = {}
+      login_required unless test_env?
+      content_type :json
+      begin
+        @news = News.find(params[:id])
+        if @news.destroy
+          result.merge!({:success => true})
+        end  
+        result.to_json
+      rescue
+        {:success => false}.to_json
+      end
     end
     
     # Updates a news given by an id. 
     put "/news/:id" do
-      login_required
+      login_required unless test_env?
+      content_type :json
+      @news = News.find(params[:id])
+      result = {}
+      if @news.update_attributes(params[:news]) 
+        result.merge!({:success => true,:news => [@news.as_json]})
+      else
+        result.merge!({:success => false,:errors => @news.errors})
+      end
+      result.to_json
     end
     
     # end news section
