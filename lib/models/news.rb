@@ -1,4 +1,9 @@
-class News < ActiveRecord::Base
+class News < CCut::Base
+  
+  #include Mongoid::Document
+  
+  field :title, :type => String
+  field :text, :type => String
   
   validates :title, :presence => true
   validates :text, :presence => true
@@ -10,5 +15,7 @@ class News < ActiveRecord::Base
   def url
     "/#{self.class.name}/#{self.id}"
   end
+  
+  
   
 end

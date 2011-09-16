@@ -1,30 +1,38 @@
-require File.join(File.dirname(__FILE__), '..', '/static_app')
-
 require 'rubygems'
 require 'sinatra'
-require 'sinatra/activerecord'
 require 'rack/test'
 require 'rspec'
+require 'database_cleaner'
+require 'yajl'
+
+ENV['RACK_ENV'] = 'test'
+
+require File.join(File.dirname(__FILE__), '..', '/lib/c_cut.rb')
 
 # set test environment
-set :environment, :test
+set :environment, ENV['RACK_ENV']
 set :run, false
 set :raise_errors, true
-set :logging, false
+set :logging, true
+
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 #Dir[File.expand_path(File.join(File.dirname(__FILE__),"..",'/lib','**','*.rb'))].each {|f| require f}
 #require File.join(File.dirname(__FILE__), "..", "/static_app")
 #require File.join(File.dirname(__FILE__), "..", "/lib", "models", "news")
 #require File.join(File.dirname(__FILE__), "..", "/lib", "mail_operator")
 
-RSpec.configure do |c|
+RSpec.configure do |config|
   
-  c.before(:all) do
-    db_config = {:adapter => "sqlite3",
-                 :database  => "sinatra-test.db"
-                 }
-    ActiveRecord::Base.establish_connection(db_config)
-     
+  config.include LastResponseSamples
+  
+  config.before :each do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.start
+  end
+
+  config.after do
+    DatabaseCleaner.clean
   end
   
 end

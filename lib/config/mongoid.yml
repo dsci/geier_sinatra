@@ -1,0 +1,12 @@
+development:
+  host: localhost
+  database: geier_development
+
+test:
+  host: localhost
+  database: geier_test
+  logger: false
+
+production:
+  host: localhost
+  database: geier_production

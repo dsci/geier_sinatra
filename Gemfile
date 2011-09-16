@@ -1,15 +1,22 @@
 source 'http://rubygems.org'
 
-gem "RedCloth"
 gem "sinatra"
 gem "httparty"
+
+gem 'haml'
+gem 'slim'
+
+gem "mongoid"
+gem 'bson_ext'
+
+gem "sinatra-authentication", :require => "lib/sinatra-authentication"
+
 gem "weather", :git => "git://github.com/dsci/Weather.git"
-gem "mime"
-gem "ruby-gmail", :require => "mime"
-gem "activerecord", "~>3.0.3"
-gem "sinatra-activerecord"
 gem "bishl", :git => "git://github.com/dsci/bishl.git"
-gem "mysql"
+
+gem "mime"
+
+gem "json"
 
 group :development do
 	gem "sqlite3"
@@ -18,6 +25,17 @@ group :development do
 end
 
 group :test do
-	gem "rspec"
+	gem "shoulda"
+	gem 'fuubar'
 	gem "rack-test"
+	gem 'database_cleaner'
+	gem 'yajl-ruby'
 end
+
+#deprecated - remove when migrated to MongoDB
+gem "RedCloth"
+gem "ruby-gmail", :require => "mime"
+gem "activerecord", "~>3.0.3"
+gem "sinatra-activerecord"
+gem "mysql"
+
