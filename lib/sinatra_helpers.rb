@@ -90,6 +90,11 @@
         <ul>
       HTML
     end
+    rescue
+    rescue
+    <<-HTML
+     
+    HTML
   end
 
   def last_game
@@ -108,7 +113,11 @@
       </div>
       HTML
     end
-
+  rescue
+    <<-HTML
+     <div id="last_game">
+     </div>
+    HTML
   end
 
 end
