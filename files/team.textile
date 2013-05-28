@@ -1,32 +1,30 @@
 *Tor*
 
-* #35 Kuhn, Daniel
 * #71 Strechel, Dirk
 * # 1 Heßler, Falko 
 
 *Verteidigung*
 
-* #5 Kartheininger, Steven
-* #7 Penno, Thomas "A"
-* #20 Heisler, Raffael
 * #37 Roth, Manuela
-* #55 Krah, Dennis "C"
-* #61 Müller, Jens
-* #17 Schmidt, Marcel
-* #68 Seeber, Christian
+* #79 Schmidt, Daniel
+* #82 Hanns, Maik
+* #12 Rühl, Michael
+* #88 Mewis, Stefan "C"
+* #46 Kresse, Jens
 
 *Sturm*
 
-* #8 Hiemann, Alexander (U19)
-* #9 Pohle, Julia
 * #16 Worm, Christin
-* #19 Schiebel, Roland
 * #33 Königstätter,Ronny
-* #38 Stolzenberger, Dominik
-* #79 Schmidt, Daniel "A"
-* #98 Butzmann, Thomas
 * #27 Fuhrmann, Martin
-* #46 Kresse, Jens
+* #49 Bartoschek, Uwe
+* #13 Arnold, Linda
+* #44 Kleine, Martin
+* #24 Schirm, Michael
+* #57 Ritter, Karsten
+* #30 Junghans, Robert
+* #68 Seeber, Christian
+* #14 Sonntag, Hermann
 
 *Zeitnehmer*
 
@@ -38,9 +36,9 @@
 *Trainer*
 
 * Daniel Schmidt (C-Lizenz Inline-Skaterhockey)
-* Dennis Krah (Instruktor Inline-Skaterhockey)
 * Dirk Strechel (Instruktor Inline-Skaterhockey)
 
 *Schiedsrichter*
 
-_keine_
+* Stefan Mewis 
+* Daniel Schmidt
